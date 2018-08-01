@@ -40,7 +40,7 @@ spec:
     spec:
       containers:
         - name: mysql
-          image: mysql/mysql-server:8.0.11
+          image: quay.io/sysdig/mysql:8.0.12.1
           command:
             - /bin/bash
             - -ecx
