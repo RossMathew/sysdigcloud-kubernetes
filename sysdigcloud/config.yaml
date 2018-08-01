@@ -39,8 +39,7 @@ data:
   # this will be the service name. If using an external database, put the proper address
   # The assumption is that the redis port will always be 6339
   # This is the setup for HA Redis. IF using the deployment, comment out the line titled "redis.endpoint: redis-secondary"
-  redis.endpoint: redis-primary
-  redis.endpoint: redis-secondary
+  redis.endpoint: redis-sentinel
   # Optional: Redis password
   redis.password: ""
   # Required: Elasticsearch URL. If Elasticsearch is deployed as a Kubernetes service,
