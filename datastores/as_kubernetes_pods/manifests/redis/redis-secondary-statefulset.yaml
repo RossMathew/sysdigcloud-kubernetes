@@ -36,4 +36,3 @@ spec:
         requests:
           storage: 1Gi
       storageClassName: <INSERT_YOUR_STORAGE_CLASS_NAME>
-
