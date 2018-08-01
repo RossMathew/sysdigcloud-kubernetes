@@ -84,9 +84,9 @@ data:
   # Optional: forward application logs to stdout
   sysdigcloud.logging.stdout: "false"
   # Optional: Sysdig Cloud application JVM options. For heavy load environments this will override the defaults
-  sysdigcloud.jvm.api.options: ""
-  sysdigcloud.jvm.worker.options: ""
-  sysdigcloud.jvm.collector.options: ""
+  sysdigcloud.jvm.api.options: "-Xmx3g -Xms1g -Ddraios.redis.useSentinel=true -Ddraios.redis.master=primary -Ddraios.redis.sentinels.0=redis-sentinel:26379"
+  sysdigcloud.jvm.worker.options: "-Xmx3g -Xms3g -Ddraios.redis.useSentinel=true -Ddraios.redis.master=primary -Ddraios.redis.sentinels.0=redis-sentinel:26379"
+  sysdigcloud.jvm.collector.options: "-Xmx3g -Xms3g -Ddraios.redis.useSentinel=true -Ddraios.redis.master=primary -Ddraios.redis.sentinels.0=redis-sentinel:26379"
   # Required: Sysdig Cloud license
   sysdigcloud.license: ""
   # Optional: OAuth allowed domains (comma separated list of domains)
