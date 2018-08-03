@@ -142,4 +142,4 @@ spec:
         resources:
           requests:
             storage: 10Gi
-        storageClassName: standard
+        storageClassName: <INSERT_YOUR_STORAGE_CLASS_NAME>
