@@ -1,4 +1,15 @@
 ---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: elasticsearch-pvc
+spec:
+  accessModes: [ "ReadWriteOnce" ]
+  resources:
+    requests:
+      storage: 50Gi
+  storageClassName: standard
+---
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
@@ -44,7 +55,8 @@ spec:
       volumes:
         # Uncomment this for emptyDir volumes
         - name: data
-          emptyDir: {}
+          persistentVolumeClaim:
+           claimName: elasticsearch-pvc
         # Uncomment this for GCE Disk
         # - name: data
         #   gcePersistentDisk:

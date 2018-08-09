@@ -57,6 +57,17 @@ spec:
     app: sysdigcloud
     role: mysql
 ---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: mysql-pvc
+spec:
+  accessModes: [ "ReadWriteOnce" ]
+  resources:
+    requests:
+      storage: 10Gi
+  storageClassName: standard
+---
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
@@ -103,7 +114,8 @@ spec:
             name: sysdigcloud-mysql-config
         # Uncomment this for emptyDir volumes
         - name: data
-          emptyDir: {}
+          persistentVolumeClaim:
+           claimName: mysql-pvc
         # Uncomment this for GCE Disk
         # - name: data
         #   gcePersistentDisk:
