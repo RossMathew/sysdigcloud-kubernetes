@@ -41,7 +41,7 @@ data:
   # This is the setup for HA Redis. IF using the deployment, comment out the line titled "redis.endpoint: redis-secondary"
   redis.endpoint: redis-primary
   # Optional: Redis password
-  redis.password: ""
+  redis.password: abc123xyzXXX!
   # Required: Elasticsearch URL. If Elasticsearch is deployed as a Kubernetes service,
   # this will be the service name. If using an external database, put the proper address
   elasticsearch.url: http://sysdigcloud-elasticsearch
