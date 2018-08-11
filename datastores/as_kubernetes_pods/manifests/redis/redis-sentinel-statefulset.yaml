@@ -19,6 +19,11 @@ spec:
         env:
         - name: SENTINEL
           value: redis-primary
+        - name: REDIS_PASSWORD
+          valueFrom:
+            configMapKeyRef:
+              name: sysdigcloud-config
+              key: redis.password
         ports:
         - containerPort: 26379
           name: redis-sentinel
